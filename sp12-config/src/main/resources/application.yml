@@ -7,9 +7,14 @@ spring:
       server:
         git:
           uri: https://github.com/hl59509/spring_config
-          searchPaths: config
+          searchPaths: sp-config
           #username: your-username
           #password: your-password
+  rabbitmq:
+    host: 192.168.52.132
+    port: 5672
+    username: admin
+    password: admin
     
 server:
   port: 6001
@@ -18,3 +23,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
